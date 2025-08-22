@@ -36,3 +36,10 @@ These are my Dotfiles for my Linux system
   - [wezterm](https://github.com/wez/wezterm) (Linux, Macos & Windows)
   - [alacritty](https://github.com/alacritty/alacritty) (Linux, Macos & Windows)
 
+### Usage
+
+Delete original files from your system if they exist. Then, run the command in the dotfiles directory:
+
+```bash
+stow .
+```
