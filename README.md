@@ -1,9 +1,9 @@
 # Dotfiles
 
-These are my Dotfiles for Linux system
+These are my Dotfiles for my Linux system
 
-[!IMPORTANT]
-GNU Stow creates symlinks to this folder to the parent folder. So always git clone this repo in the $HOME directory.
+> [!IMPORTANT]
+> GNU Stow creates symlinks to this folder to the parent folder. So always git clone this repo in the $HOME directory.
 
 ## Requirements
 
@@ -35,3 +35,4 @@ GNU Stow creates symlinks to this folder to the parent folder. So always git clo
   - [kitty](https://github.com/kovidgoyal/kitty) (Linux & Macos)
   - [wezterm](https://github.com/wez/wezterm) (Linux, Macos & Windows)
   - [alacritty](https://github.com/alacritty/alacritty) (Linux, Macos & Windows)
+
