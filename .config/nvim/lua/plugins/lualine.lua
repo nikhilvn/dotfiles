@@ -85,9 +85,7 @@ return {
             cond = require("lazy.status").has_updates,
             color = function() return { fg = Snacks.util.color("Special") } end,
           },
-          { "lsp_status", color = { fg = colors.pink } },
-        },
-        lualine_y = {
+          { "lsp_status" },
           {
             "diff",
             symbols = {
@@ -108,16 +106,15 @@ return {
           },
           { "branch" },
         },
+        lualine_y = {},
         lualine_z = {
           {
             "progress",
             padding = { left = 1, right = 1 },
-            color = { fg = colors.blue },
           },
           {
             "location",
             padding = { left = 0, right = 0 },
-            color = { fg = colors.blue },
           },
         },
       },

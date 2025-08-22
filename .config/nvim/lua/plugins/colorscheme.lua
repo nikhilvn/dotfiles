@@ -1,26 +1,78 @@
+local colors = require("config.colors")
+
 return {
   {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
+    "catppuccin/nvim",
+    lazy = true,
+    name = "catppuccin",
     opts = {
-      -- Enable transparent background
-      transparent = true,
-
-      -- Reduce the overall saturation of colours for a more muted look
-      saturation = 0.7, -- accepts a value between 0 and 1. 0 will be fully desaturated (greyscale) and 1 will be the full color (default)
-
-      -- Enable italics comments
-      italic_comments = false,
-
-      -- Replace all fillchars with ' ' for the ultimate clean look
-      hide_fillchars = false,
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
+      color_overrides = {
+        all = {
+          base = colors.base,
+          mantle = colors.base,
+          crust = colors.base,
+        },
+      },
+      integrations = {
+        aerial = true,
+        alpha = true,
+        cmp = true,
+        dashboard = true,
+        flash = true,
+        fzf = true,
+        grug_far = true,
+        gitsigns = true,
+        headlines = true,
+        illuminate = true,
+        indent_blankline = { enabled = true },
+        leap = true,
+        lsp_trouble = true,
+        mason = true,
+        markdown = true,
+        mini = true,
+        native_lsp = {
+          enabled = true,
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
+        },
+        navic = { enabled = true, custom_bg = "lualine" },
+        neotest = true,
+        neotree = true,
+        noice = true,
+        notify = true,
+        semantic_tokens = true,
+        snacks = true,
+        telescope = true,
+        treesitter = true,
+        treesitter_context = true,
+        which_key = true,
+      },
+    },
+    specs = {
+      {
+        "akinsho/bufferline.nvim",
+        optional = true,
+        init = function()
+          local bufline = require("catppuccin.groups.integrations.bufferline")
+          bufline.get = bufline.get_theme
+        end,
+        opts = function(_, opts)
+          if (vim.g.colors_name or ""):find("catppuccin") then
+            opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+          end
+        end,
+      },
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "catppuccin",
     },
   },
 }
