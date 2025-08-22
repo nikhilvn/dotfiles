@@ -25,5 +25,10 @@ return {
     opts.completion.documentation.window = { border = "rounded" }
     opts.completion.menu.border = "rounded"
     opts.completion.ghost_text = { enabled = false }
+    opts.keymap = {
+      preset = "enter",
+      ["<Tab>"] = { "select_next", "fallback" },
+      ["<S-Tab>"] = { "select_prev", "fallback" },
+    }
   end,
 }
